@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Router from "./components/Router";
+import Store from "./store";
+import { createContext, useEffect } from "react";
+
+const store = new Store();
+
+export const Context = createContext({
+  store,
+});
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      store.checkAuth();
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ store }}>
+      <Router />
+    </Context.Provider>
   );
 }
 
