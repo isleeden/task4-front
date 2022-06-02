@@ -62,6 +62,7 @@ const Users = () => {
     const selected = getSelected();
     await UserService.blockUsers(selected);
     if (-1 !== selected.indexOf(store.user.id)) {
+      alert("You blocked yourself:)")
       await store.logout();
     } else {
       store.getUsers();
@@ -72,6 +73,7 @@ const Users = () => {
     const selected = getSelected();
     await UserService.removeUsers(selected);
     if (-1 !== selected.indexOf(store.user.id)) {
+      alert("You removed yourself:)")
       await store.logout();
     } else {
       store.getUsers();

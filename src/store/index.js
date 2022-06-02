@@ -32,7 +32,7 @@ export default class Store {
     try {
       const response = await AuthService.login(login, password);
       localStorage.setItem("token", response.data.accessToken);
-      localStorage.setItem("refreshToken", response.data.refreshToken);
+      // localStorage.setItem("refreshToken", response.data.refreshToken);
       this.setIsAuth(true);
       this.setUser(response.data.user);
     } catch (e) {
@@ -48,7 +48,7 @@ export default class Store {
     try {
       const response = await AuthService.registration(login, password);
       localStorage.setItem("token", response.data.accessToken);
-      localStorage.setItem("refreshToken", response.data.refreshToken);
+      // localStorage.setItem("refreshToken", response.data.refreshToken);
       this.setIsAuth(true);
       this.setUser(response.data.user);
     } catch (e) {
@@ -64,7 +64,7 @@ export default class Store {
     try {
       const refreshToken = localStorage.getItem("refreshToken");
       localStorage.removeItem("token");
-      localStorage.removeItem("refreshToken");
+      // localStorage.removeItem("refreshToken");
       this.setIsAuth(false);
       this.setUser({});
       await AuthService.logout(refreshToken);
