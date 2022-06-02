@@ -4,7 +4,7 @@ import Router from "./components/Router";
 import Store from "./store";
 import { createContext, useEffect } from "react";
 
-const store = new Store();
+export const store = new Store();
 
 export const Context = createContext({
   store,
