@@ -18,7 +18,7 @@ export default function Login() {
       <div className="w-50 m-auto mt-5">
         <Form onSubmit={onSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Login</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter login"
