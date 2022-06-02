@@ -21,14 +21,7 @@ export default class Store {
 
   async login(login, password) {
     try {
-      // const response = await AuthService.login(login, password);
-      const response = await axios.post(
-        `${API_URL}/login`,
-        { login, password },
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await AuthService.login(login, password);
       localStorage.setItem("token", response.data.accessToken);
       this.setIsAuth(true);
       this.setUser(response.data.user);
