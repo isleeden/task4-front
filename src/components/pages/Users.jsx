@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Button,
   ButtonGroup,
@@ -61,8 +61,7 @@ const Users = () => {
   const blockUsers = async () => {
     const selected = getSelected();
     await UserService.blockUsers(selected);
-    if (-1 != selected.indexOf(store.user.id)) {
-      console.log("logout");
+    if (-1 !== selected.indexOf(store.user.id)) {
       await store.logout();
     } else {
       store.getUsers();
@@ -72,8 +71,7 @@ const Users = () => {
   const removeUsers = async () => {
     const selected = getSelected();
     await UserService.removeUsers(selected);
-    if (-1 != selected.indexOf(store.user.id)) {
-      console.log("logout");
+    if (-1 !== selected.indexOf(store.user.id)) {
       await store.logout();
     } else {
       store.getUsers();

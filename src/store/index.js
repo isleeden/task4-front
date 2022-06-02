@@ -19,6 +19,9 @@ export default class Store {
 
   setIsAuth(b) {
     this.isAuth = b;
+    if (!b) {
+      this.setUsers([]);
+    }
   }
 
   setUser(user) {
