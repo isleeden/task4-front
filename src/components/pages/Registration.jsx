@@ -8,7 +8,7 @@ export default function Registration() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     store.registration(login, password);
   };
