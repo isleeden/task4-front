@@ -118,16 +118,16 @@ const Users = () => {
       </div>
 
       <Row className="mt-3">
-        <Col xl="2" className="border p-2">
+        <Col xs="2" className="border p-2">
           ID
         </Col>
-        <Col xl="8" className="border p-2">
+        <Col xs="8" className="border p-2">
           Login
         </Col>
-        <Col xl="1" className="d-flex justify-content-center border p-2">
+        <Col xs="1" className="d-flex justify-content-center border p-2">
           Blocked
         </Col>
-        <Col xl="1" className="d-flex justify-content-center border p-2">
+        <Col xs="1" className="d-flex justify-content-center border p-2">
           Select
         </Col>
       </Row>
@@ -135,16 +135,16 @@ const Users = () => {
       {store.users?.map(({ id, login, blocked, selected }) => {
         return (
           <Row key={id}>
-            <Col xl="2" className="border p-2">
+            <Col xs="2" className="border p-2">
               {id}
             </Col>
-            <Col xl="8" className="border p-2">
+            <Col xs="8" className="border p-2">
               {login}
             </Col>
-            <Col xl="1" className="d-flex justify-content-center border p-2">
+            <Col xs="1" className="d-flex justify-content-center border p-2">
               <Form.Check type="checkbox" disabled checked={blocked} />
             </Col>
-            <Col xl="1" className="d-flex justify-content-center border p-2">
+            <Col xs="1" className="d-flex justify-content-center border p-2">
               <Form.Check
                 type="checkbox"
                 onChange={toggleSelect(id)}
